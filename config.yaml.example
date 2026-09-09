@@ -1,0 +1,28 @@
+server:
+  host: "0.0.0.0"
+  port: 8080
+
+pve:
+  endpoint: "https://pve.example.com:8006"
+  username: "root@pam"
+  password: "your-pve-password"
+  verify_ssl: false
+  node: "pve"
+
+database:
+  host: "localhost"
+  port: 5432
+  user: "postgres"
+  password: "your-db-password"
+  dbname: "thinclient"
+  sslmode: "disable"
+
+redis:
+  host: "localhost"
+  port: 6379
+  password: ""
+  db: 0
+
+jwt:
+  secret: "your-secret-key-change-in-production"
+  expire_time: 24

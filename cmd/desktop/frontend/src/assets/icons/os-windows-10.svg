@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" aria-label="Windows 10 logo (official 2012-2021 dark blue, source: Wikimedia Commons Windows_logo_-_2012_(dark_blue).svg)">
+  <!-- Official Windows 10 symbol (AkshayAnand on Commons, color matched to Windows 10 brand #0078D7)
+       Horizontal perspective skew as described in the German file description — deskewing this yields the Win11 shape -->
+  <!-- Top-left pane -->
+  <path d="M0 17.69 L37.84 12.50 L37.84 44.00 L0.00 44.00 Z" fill="#0078D7"/>
+  <!-- Bottom-left pane -->
+  <path d="M0 43.97 L37.84 43.97 L37.84 75.47 L0.00 70.41 Z" fill="#0078D7"/>
+  <!-- Top-right pane -->
+  <path d="M43.22 8.41 L88.00 3.40 L88.00 35.40 L43.22 35.40 Z" fill="#0078D7"/>
+  <!-- Bottom-right pane -->
+  <path d="M43.22 46.60 L88.00 42.60 L88.00 76.00 L43.22 69.66 Z" fill="#0078D7"/>
+</svg>

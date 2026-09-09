@@ -1,0 +1,21 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "github.com/example/thin-client-desktop",
+  "outputfilename": "thin-client-desktop",
+  "frontend:install": "npm --prefix ./cmd/desktop/frontend install",
+  "frontend:build": "npm --prefix ./cmd/desktop/frontend run build",
+  "frontend:dev:watcher": "npm --prefix ./cmd/desktop/frontend run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "Thin Client Team",
+    "email": "admin@example.com"
+  },
+  "info": {
+    "companyName": "Thin Client",
+    "productName": "瘦客户端云桌面系统",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright © 2026"
+  },
+  "wailsjsdir": "./cmd/desktop/frontend/wailsjs",
+  "assetdir": "./cmd/desktop/frontend/dist"
+}

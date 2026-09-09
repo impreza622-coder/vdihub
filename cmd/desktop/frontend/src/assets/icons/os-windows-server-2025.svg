@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Windows Server 2025 logo">
+  <!-- Windows Server 2025: Windows 11 rounded-square panes shape with next-gen indigo-cobalt gradient
+       Brand palette: #0067C0 → #243B93 (midnight blue) + Server 2025 diamond badge -->
+  <defs>
+    <linearGradient id="srv25-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0067C0"/>
+      <stop offset="1" stop-color="#243B93"/>
+    </linearGradient>
+    <!-- Rounded pane shape for the Win11-style panes -->
+  </defs>
+  <!-- Four rounded-corner panes (Win11 style, no skew) -->
+  <g>
+    <rect x="4"  y="8"  width="40" height="36" rx="4" fill="url(#srv25-g)"/>
+    <rect x="56" y="2"  width="40" height="42" rx="4" fill="url(#srv25-g)"/>
+    <rect x="4"  y="54" width="40" height="36" rx="4" fill="url(#srv25-g)"/>
+    <rect x="56" y="56" width="40" height="42" rx="4" fill="url(#srv25-g)"/>
+  </g>
+  <!-- Server 2025 badge: Diamond/tile shape with "25" stylized -->
+  <g transform="translate(66,66)">
+    <polygon points="15,1 29,15 15,29 1,15" fill="#FFFFFF" stroke="#243B93" stroke-width="1.3"/>
+    <rect x="9"  y="10" width="4" height="10" rx="1" fill="#243B93"/>
+    <path d="M17 10 h5 a3 3 0 0 1 0 6 h-5 z M22 16 v4 M17 16 v4" fill="#243B93"/>
+  </g>
+</svg>

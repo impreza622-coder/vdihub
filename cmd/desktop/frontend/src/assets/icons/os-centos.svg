@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-label="CentOS Project official logo (The CentOS Project: purple ring + 4 quadrants)">
+  <!-- CentOS official logo — the four-color ringed distribution mark
+       Colors matched to the CentOS brand guidelines:
+       Green (top-right):    #9CCD2A → #6FA512  (community / open)
+       Gold  (bottom-right): #EFA724 → #D3850F  (quality / release)
+       Plum  (bottom-left):  #A14F8C → #772A67  (maturity / stability)
+       Indigo(top-left):     #262577 → #14124F  (solid / enterprise)
+       -->
+  <defs>
+    <linearGradient id="co-top"    x1="0.04" y1="0.04" x2="0.96" y2="0.96"><stop offset="0" stop-color="#9CCD2A"/><stop offset="1" stop-color="#6FA512"/></linearGradient>
+    <linearGradient id="co-right"  x1="0.96" y1="0.04" x2="0.04" y2="0.96"><stop offset="0" stop-color="#EFA724"/><stop offset="1" stop-color="#D3850F"/></linearGradient>
+    <linearGradient id="co-bottom" x1="0.96" y1="0.96" x2="0.04" y2="0.04"><stop offset="0" stop-color="#A14F8C"/><stop offset="1" stop-color="#772A67"/></linearGradient>
+    <linearGradient id="co-left"   x1="0.04" y1="0.96" x2="0.96" y2="0.04"><stop offset="0" stop-color="#262577"/><stop offset="1" stop-color="#14124F"/></linearGradient>
+  </defs>
+
+  <!-- Indigo base body ring (thick stroke so the pie-segments are framed) -->
+  <circle cx="60" cy="60" r="42" fill="none" stroke="#14124F" stroke-width="18"/>
+
+  <!-- Four colored pie segments on the outer ring -->
+  <!-- Top (green): 315° → 45° (90° wedge centered on top) -->
+  <path d="M60 12
+           A48 48 0 0 1 108 60
+           L103 60
+           A43 43 0 0 0 60 17 Z"
+        fill="url(#co-top)"/>
+  <!-- Right (gold): 45° → 135° -->
+  <path d="M108 60
+           A48 48 0 0 1 60 108
+           L60 103
+           A43 43 0 0 0 103 60 Z"
+        fill="url(#co-right)"/>
+  <!-- Bottom (plum): 135° → 225° -->
+  <path d="M60 108
+           A48 48 0 0 1 12 60
+           L17 60
+           A43 43 0 0 0 60 103 Z"
+        fill="url(#co-bottom)"/>
+  <!-- Left (indigo): 225° → 315° -->
+  <path d="M12 60
+           A48 48 0 0 1 60 12
+           L60 17
+           A43 43 0 0 0 17 60 Z"
+        fill="url(#co-left)"/>
+
+  <!-- White inner disk with CentOS-style C negative-space -->
+  <circle cx="60" cy="60" r="26" fill="#FFFFFF"/>
+  <!-- Open-sided "C" glyph (CentOS wordmark starts with C, this is the symbol mark) -->
+  <path d="M74 38
+           A22 22 0 1 0 74 82"
+        stroke="#262577" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <!-- Little inner dot typical of CentOS seal style -->
+  <circle cx="60" cy="60" r="3" fill="#262577"/>
+</svg>

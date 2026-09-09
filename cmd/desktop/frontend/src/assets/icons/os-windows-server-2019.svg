@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Windows Server 2019 logo">
+  <!-- Windows Server 2019: Win10-style dark-blue panes with enterprise purple accent and Server shield badge
+       Brand palette: Deep blue #004E8C + royal blue #0078D7 + purple #5C2D91 -->
+  <defs>
+    <linearGradient id="srv19-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0066B3"/>
+      <stop offset="1" stop-color="#5C2D91"/>
+    </linearGradient>
+  </defs>
+  <!-- Four perspective panes (Win10 era) -->
+  <path d="M2 22 L44 16 L44 50 L2 50 Z" fill="url(#srv19-g)"/>
+  <path d="M2 50 L44 50 L44 84 L2 79 Z" fill="url(#srv19-g)"/>
+  <path d="M50 11 L98 5 L98 42 L50 42 Z" fill="url(#srv19-g)"/>
+  <path d="M50 52 L98 48 L98 85 L50 79 Z" fill="url(#srv19-g)"/>
+  <!-- Enterprise Server badge (hexagon shield outline, bottom-right) -->
+  <g transform="translate(70,70)" fill="#FFFFFF" stroke="#5C2D91" stroke-width="1.2">
+    <polygon points="13,1 25,8 25,22 13,29 1,22 1,8"/>
+    <path d="M7 11 L13 16 L19 10 M13 16 L13 26" stroke="#5C2D91" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

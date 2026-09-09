@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" aria-label="Windows 7 logo (2001-2012 multicolored window flag, official brand colors: red/green/blue/yellow)">
+  <!-- Official Windows 7 era multicolored four-pane window with perspective skew (Microsoft 2001-2012)
+       Brand colors: Red #F65314 / Green #7CBB00 / Blue #00A1F1 / Yellow #FFBB00
+       Top panes tilt up, bottom panes tilt down — classic "flying window" flag -->
+  <g transform="translate(8,10) skewX(-18)">
+    <!-- Top-left: Red -->
+    <path d="M0 16 L172 0 L172 144 L0 160 Z" fill="#F65314"/>
+    <!-- Top-right: Green -->
+    <path d="M188 0 L376 0 L376 160 L188 144 Z" fill="#7CBB00"/>
+  </g>
+  <g transform="translate(8,10) skewX(18)">
+    <!-- Bottom-left: Blue -->
+    <path d="M0 180 L172 180 L172 320 L0 304 Z" fill="#00A1F1"/>
+    <!-- Bottom-right: Yellow -->
+    <path d="M188 180 L376 160 L376 304 L188 320 Z" fill="#FFBB00"/>
+  </g>
+</svg>

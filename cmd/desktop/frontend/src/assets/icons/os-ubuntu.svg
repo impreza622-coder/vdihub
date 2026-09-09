@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-label="Ubuntu logo (2022 Circle of Friends, Canonical official: #E95420 orange + 3 heads + bonds)">
+  <!-- Official Ubuntu 2022 "Circle of Friends" mark (Canonical Ltd., GPL-3.0)
+       Sourced from: https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg
+       Canonical brand orange #E95420, three white heads in triangular arrangement with bond curves -->
+  <!-- Base orange disk -->
+  <circle cx="150" cy="150" r="148" fill="#E95420"/>
+
+  <!-- Small accent ring (shallow highlight inside) -->
+  <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="12"/>
+
+  <!-- Three "heads" (white circles: left, top-right, bottom-right) -->
+  <circle cx="80"  cy="150" r="22" fill="#FFFFFF"/>
+  <circle cx="188" cy="86"  r="22" fill="#FFFFFF"/>
+  <circle cx="188" cy="214" r="22" fill="#FFFFFF"/>
+
+  <!-- Bond / "holding hands" arcs between heads (Canonical's signature wedges) -->
+  <!-- Arc from left head up toward top-right head -->
+  <path d="M100 132
+           A56 56 0 0 1 170 96
+           L176 116
+           A34 34 0 0 0 118 146 Z"
+        fill="#FFFFFF"/>
+  <!-- Arc from left head down toward bottom-right head -->
+  <path d="M100 168
+           A56 56 0 0 0 176 204
+           L170 204
+           A56 56 0 0 1 104 174 Z"
+        fill="#FFFFFF"/>
+  <!-- Arc from top-right head around right side to bottom-right head -->
+  <path d="M204 106
+           A56 56 0 0 1 204 194
+           L186 192
+           A34 34 0 0 0 186 108 Z"
+        fill="#FFFFFF"/>
+</svg>

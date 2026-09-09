@@ -1,0 +1,23 @@
+# 运行时第三方客户端与安装器（体积大，不入库）
+dependencies/
+cmd/desktop/dependencies/
+cmd/desktop/prerequisites/
+
+# 构建输出
+dist/
+installer_out/
+*.exe
+build_log*.txt
+*.log
+
+# 前端
+node_modules/
+cmd/desktop/frontend/dist/
+
+# 配置文件（含密钥），示例文件保留
+config.yaml
+
+# IDE
+.idea/
+.vscode/
+*.swp

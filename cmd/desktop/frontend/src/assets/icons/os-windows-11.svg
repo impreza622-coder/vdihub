@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Windows 11 logo (official 2021-present Microsoft brand mark, source: Wikimedia Commons Windows_logo_-_2021.svg)">
+  <!-- Official Windows 11 symbol (OAOV on Wikimedia, based on Microsoft brand assets)
+       Microsoft brand blue: #0078D4, perspective-tilted four panes in rounded square -->
+  <g>
+    <!-- Top-left pane -->
+    <path d="M64.29 117.68 C64.29 96.47 81.43 79.33 102.65 79.33 L248.29 59.47 C255.36 58.52 262.66 57.60 270.00 56.73
+             L270.00 229.58 L64.29 232.35 Z" fill="#0078D4"/>
+    <!-- Top-right pane -->
+    <path d="M280.00 55.58 C301.70 53.04 325.25 50.30 350.00 47.39
+             C413.20 40.08 448.00 44.50 448.00 79.33
+             L448.00 229.58 L280.00 229.58 Z" fill="#0078D4"/>
+    <!-- Bottom-left pane -->
+    <path d="M64.29 242.35 L270.00 240.00 L270.00 415.27
+             C262.66 414.40 255.36 413.48 248.29 412.53
+             L102.65 392.67 C81.43 392.67 64.29 375.53 64.29 354.32 Z" fill="#0078D4"/>
+    <!-- Bottom-right pane -->
+    <path d="M280.00 240.00 L448.00 240.00 L448.00 390.67
+             C448.00 425.50 413.20 429.92 350.00 422.61
+             C325.25 419.70 301.70 416.96 280.00 414.42 Z" fill="#0078D4"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" aria-label="Windows Server 2022 logo">
+  <!-- Windows Server 2022: Win10/11-style panes with teal-azure Azure cloud gradient + Server 2022 hexagonal badge
+       Brand palette: #0078D4 + #00BCF2 (Azure) + #0B5394 (datacenter blue) -->
+  <defs>
+    <linearGradient id="srv22-g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0078D4"/>
+      <stop offset="1" stop-color="#0B5394"/>
+    </linearGradient>
+  </defs>
+  <!-- Four panes (Win10 shape) -->
+  <path d="M2 22 L44 16 L44 50 L2 50 Z" fill="url(#srv22-g)"/>
+  <path d="M2 50 L44 50 L44 84 L2 79 Z" fill="url(#srv22-g)"/>
+  <path d="M50 11 L98 5 L98 42 L50 42 Z" fill="url(#srv22-g)"/>
+  <path d="M50 52 L98 48 L98 85 L50 79 Z" fill="url(#srv22-g)"/>
+  <!-- Server 2022 badge: Azure-style square-rounded + "22" dot pattern -->
+  <g transform="translate(68,68)">
+    <rect x="2" y="2" width="26" height="26" rx="5" fill="#FFFFFF" stroke="#0B5394" stroke-width="1.4"/>
+    <circle cx="10" cy="10" r="2.2" fill="#0B5394"/>
+    <circle cx="20" cy="10" r="2.2" fill="#0B5394"/>
+    <circle cx="10" cy="20" r="2.2" fill="#0B5394"/>
+    <circle cx="20" cy="20" r="2.2" fill="#0B5394"/>
+  </g>
+</svg>
