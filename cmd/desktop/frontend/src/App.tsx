@@ -1673,15 +1673,35 @@ function App() {
                 <div>运行环境：Windows 10/11/Server 2019+</div>
               </div>
             </div>
+            <div style={{ marginBottom: 20 }}>
+              <a
+                href="https://sdfeilida.com" target="_blank" rel="noopener noreferrer"
+                style={{
+                  color: '#6366f1', fontSize: 15, fontWeight: 600,
+                  textDecoration: 'none', display: 'inline-flex',
+                  alignItems: 'center', gap: 6, padding: '10px 24px',
+                  border: '1px solid #6366f1', borderRadius: 10, transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#6366f1'
+                  e.currentTarget.style.color = '#fff'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'transparent'
+                  e.currentTarget.style.color = '#6366f1'
+                }}
+              >
+                <GlobalOutlined />访问我们的官网
+              </a>
+            </div>
             <div style={{
               color: isDark ? '#475569' : '#94a3b8',
               fontSize: 12, lineHeight: 1.6,
               borderTop: `1px solid ${isDark ? '#1e2350' : '#e2e8f0'}`,
               paddingTop: 16,
-              textAlign: 'center',
             }}>
-              <div>本应用基于 MIT 协议开源</div>
-              <div>© {new Date().getFullYear()} Thin Client Contributors</div>
+              <div>山东飞力达软件有限公司 版权所有</div>
+              <div>© {new Date().getFullYear()} Feilida Software Co., Ltd. All Rights Reserved.</div>
             </div>
           </div>
         </Modal>
@@ -1970,16 +1990,47 @@ function App() {
             </div>
           </div>
 
+          <div style={{ marginBottom: 20 }}>
+            <a
+              href="https://sdfeilida.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: '#6366f1',
+                fontSize: 15,
+                fontWeight: 600,
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                padding: '10px 24px',
+                border: '1px solid #6366f1',
+                borderRadius: 10,
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = '#6366f1'
+                e.currentTarget.style.color = '#fff'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.color = '#6366f1'
+              }}
+            >
+              <GlobalOutlined />
+              访问我们的官网
+            </a>
+          </div>
+
           <div style={{
             color: isDark ? '#475569' : '#94a3b8',
             fontSize: 12,
             lineHeight: 1.6,
             borderTop: `1px solid ${isDark ? '#1e2350' : '#e2e8f0'}`,
             paddingTop: 16,
-            textAlign: 'center',
           }}>
-            <div>本应用基于 MIT 协议开源</div>
-            <div>© {new Date().getFullYear()} Thin Client Contributors</div>
+            <div>山东飞力达软件有限公司 版权所有</div>
+            <div>© {new Date().getFullYear()} Feilida Software Co., Ltd. All Rights Reserved.</div>
           </div>
         </div>
       </Modal>
@@ -3303,7 +3354,7 @@ function GlobalSettingsPanel({ isDark, isLocalMode, brandName, setBrandName, bra
             <div style={formRowStyle}>
               <div style={formLabelStyle}>
                 <div style={labelText}>产品名称</div>
-                <div style={{ fontSize: 12, ...descText }}>显示在登录页大标题与侧边栏位置（例如：云桌面）</div>
+                <div style={{ fontSize: 12, ...descText }}>显示在登录页大标题与侧边栏位置（例如：飞力达云桌面）</div>
               </div>
               <Input value={brandName} onChange={e => setBrandName(e.target.value)} placeholder="瘦客户端云桌面" style={{ width: 260, borderRadius: 8 }} />
             </div>
@@ -3383,7 +3434,7 @@ function SystemKioskSettingsCard(props: {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<SystemKioskStatus | null>(null)
   const [registerUninstall, setRegisterUninstall] = useState(false)
-  const [uninstallPublisher, setUninstallPublisher] = useState('Thin Client Team')
+  const [uninstallPublisher, setUninstallPublisher] = useState('山东飞力达软件有限公司')
   const [uninstallVersion, setUninstallVersion] = useState('1.0.0')
   const [replaceShell, setReplaceShell] = useState(false)
   const [enableAutoLogin, setEnableAutoLogin] = useState(false)

@@ -13,6 +13,8 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)](#)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
+**由 [山东飞力达软件有限公司](https://sdfeilida.com) 开源维护**
+
 </div>
 
 ---
@@ -218,6 +220,8 @@ POST /api/v1/vms/{vmid}/connect   # 获取连接信息（协议/地址/端口/�
 ## 📄 License
 
 本项目基于 [MIT License](LICENSE) 开源。
+
+Copyright © 2026 山东飞力达软件有限公司 (Shandong Feilida Software Co., Ltd.)
 
 ## 💬 社区
 

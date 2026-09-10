@@ -8,16 +8,16 @@
     !define INFO_PROJECTNAME "thin-client-desktop"
 !endif
 !ifndef INFO_COMPANYNAME
-    !define INFO_COMPANYNAME "Thin Client Team"
+    !define INFO_COMPANYNAME "山东飞力达软件有限公司"
 !endif
 !ifndef INFO_PRODUCTNAME
-    !define INFO_PRODUCTNAME "瘦客户端云桌面"
+    !define INFO_PRODUCTNAME "飞力达云桌面"
 !endif
 !ifndef INFO_PRODUCTVERSION
     !define INFO_PRODUCTVERSION "1.0.0"
 !endif
 !ifndef INFO_COPYRIGHT
-    !define INFO_COPYRIGHT "Copyright © 2026 Thin Client Team"
+    !define INFO_COPYRIGHT "版权所有 © 2026 山东飞力达软件有限公司"
 !endif
 !ifndef PRODUCT_EXECUTABLE
     !define PRODUCT_EXECUTABLE "${INFO_PROJECTNAME}.exe"

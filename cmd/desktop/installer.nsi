@@ -1,23 +1,23 @@
 ﻿; ============================================================
-;   瘦客户端 (Thin Client Desktop)   NSIS 安装脚本
+;   飞力达云桌面 (Thin Client Desktop)   NSIS 安装脚本
 ;   编码：UTF-8 with BOM（build.ps1 按 UTF8-BOM 读写，NSIS Unicode true）
 ; ============================================================
 
 ; ------ 应用信息 ------
-!define APP_NAME        "瘦客户端"
+!define APP_NAME        "飞力达云桌面"
 !define APP_EXE         "thin-client-desktop.exe"
-!define APP_PUBLISHER   "Thin Client Team"
+!define APP_PUBLISHER   "山东飞力达软件有限公司"
 !define APP_VERSION     "1.0.5"
-!define APP_URL         ""
+!define APP_URL         "https://sdfeilida.com"
 !define UNINSTALL_EXE   "uninst.exe"
 
 ; 安装 / 卸载 注册表键
-!define UNINSTALL_KEY   "Software\Microsoft\Windows\CurrentVersion\Uninstall\ThinClientDesktop"
+!define UNINSTALL_KEY   "Software\Microsoft\Windows\CurrentVersion\Uninstall\FeiLiDaThinClient"
 
 ; ------ NSIS 配置 ------
 Unicode true
 RequestExecutionLevel admin     ; 写 HKLM / Program Files 需要管理员权限
-InstallDir "$PROGRAMFILES64\ThinClient\ThinClientDesktop"
+InstallDir "$PROGRAMFILES64\FeiLiDa\ThinClientDesktop"
 InstallDirRegKey HKLM "${UNINSTALL_KEY}" "InstallLocation"
 ShowInstDetails show
 ShowUnInstDetails show
@@ -105,7 +105,7 @@ Function .onInit
     Pop $R0
 
     ; 检查旧安装路径的目录并卸载，防止残留文件冲突
-    StrCpy $R8 "$PROGRAMFILES64\ThinClient\ThinClientDesktop"
+    StrCpy $R8 "$PROGRAMFILES64\FeiLiDa\瘦客户端云桌面"
     ${If} ${FileExists} "$R8\${APP_EXE}"
         DetailPrint "检测到旧版本程序，正在卸载 ..."
         ${If} ${FileExists} "$R8\${UNINSTALL_EXE}"
@@ -116,7 +116,7 @@ Function .onInit
     ${EndIf}
 
     ; 强制英文安装路径
-    StrCpy $INSTDIR "$PROGRAMFILES64\ThinClient\ThinClientDesktop"
+    StrCpy $INSTDIR "$PROGRAMFILES64\FeiLiDa\ThinClientDesktop"
 
     ; 检测 WebView2 Runtime（Wails 依赖，部分 LTSC 默认不带需安装）
     ReadRegStr $0 HKLM "SOFTWARE\WOW6432Node\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}" "pv"
@@ -140,7 +140,7 @@ FunctionEnd
 ; ============================================================
 ;  安装区 Section
 ; ============================================================
-Section "瘦客户端 (必需)" SecMain
+Section "飞力达云桌面 (必需)" SecMain
     SectionIn RO
     SetOutPath "$INSTDIR"
 

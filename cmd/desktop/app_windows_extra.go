@@ -107,7 +107,7 @@ func init() {
 // ==========================================================
 const (
 	errorAlreadyExists = 183
-	_mutexName         = `Global\ThinClientDesktop_Mutex_v1`
+	_mutexName         = `Global\FeiLiDaThinClient_Mutex_v1`
 	_swzRestore        = 9
 	_swzShow           = 5
 	_synchronize       = 0x00100000
@@ -159,7 +159,7 @@ func activateExistingInstance() {
 		}
 		// 标题含"云桌面"或窗口类名属于 thin-client-desktop（Wails 通常是 "WebView2Host"/"Chrome_WidgetWin_1"，因此改用窗口标题判断）
 		title := getWindowText(hwnd)
-		if contains(title, "云桌面") || contains(title, "瘦客户") || contains(title, "Thin Client") || contains(title, "ThinClient") {
+		if contains(title, "云桌面") || contains(title, "瘦客户") || contains(title, "Thin Client") || contains(title, "FeiLiDa") {
 			c.bestHWND = hwnd
 			return 0
 		}
@@ -223,7 +223,7 @@ func contains(s, sub string) bool {
 
 // ==========================================================
 //  2. 开机启动注册表写删 + 读取状态
-//     HKCU\Software\Microsoft\Windows\CurrentVersion\Run  \  ThinClientDesktop
+//     HKCU\Software\Microsoft\Windows\CurrentVersion\Run  \  FeiLiDaThinClient
 //
 // ==========================================================
 var (
@@ -246,8 +246,8 @@ const (
 	_keyQueryValue      = 0x0001
 	_keyWow64_64        = 0x0100 // KEY_WOW64_64KEY (32位进程访问64位注册表视图)
 	_runSubKey          = `Software\Microsoft\Windows\CurrentVersion\Run`
-	_runValueName       = "ThinClientDesktop"
-	_runValueNameAuto   = "ThinClientDesktop_AutoKiosk"
+	_runValueName       = "FeiLiDaThinClient"
+	_runValueNameAuto   = "FeiLiDaThinClient_AutoKiosk"
 	_policySystemPath   = `Software\Microsoft\Windows\CurrentVersion\Policies\System`
 	_policyExplorerPath = `Software\Microsoft\Windows\CurrentVersion\Policies\Explorer`
 )
@@ -1173,7 +1173,7 @@ func writeUninstallEntry(publisher, version, displayName string) error {
 		displayName = "云桌面客户端"
 	}
 	if publisher == "" {
-		publisher = "Thin Client Team"
+		publisher = "山东飞力达软件有限公司"
 	}
 	if version == "" {
 		version = "1.0.0"
@@ -1186,6 +1186,8 @@ func writeUninstallEntry(publisher, version, displayName string) error {
 	_ = regSetStringHKLM(uninstallSubKeyPath(), "InstallLocation", filepath.Dir(exe))
 	_ = regSetDWORDHKLM(uninstallSubKeyPath(), "NoModify", 1)
 	_ = regSetDWORDHKLM(uninstallSubKeyPath(), "NoRepair", 1)
+	_ = regSetStringHKLM(uninstallSubKeyPath(), "URLInfoAbout", "https://sdfeilida.com")
+	_ = regSetStringHKLM(uninstallSubKeyPath(), "URLUpdateInfo", "https://sdfeilida.com")
 	y, m, d := time.Now().Date()
 	dateStr := fmt.Sprintf("%04d%02d%02d", y, int(m), d)
 	_ = regSetStringHKLM(uninstallSubKeyPath(), "InstallDate", dateStr)
