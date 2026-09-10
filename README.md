@@ -104,7 +104,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-org/vdihub.git
+git clone https://github.com/impreza622-coder/vdihub.git
 cd vdihub
 
 # 安装 Go 依赖
