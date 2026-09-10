@@ -15,6 +15,8 @@
 
 **由 [山东飞力达软件有限公司](https://sdfeilida.com) 开源维护**
 
+### ⬇️ [下载软件点我](https://sdfeilida.com)
+
 </div>
 
 ---
