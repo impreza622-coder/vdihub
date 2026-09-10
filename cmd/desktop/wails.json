@@ -13,7 +13,7 @@
   "info": {
     "companyName": "山东飞力达软件有限公司",
     "productName": "飞力达云桌面",
-    "productVersion": "1.0.5",
+    "productVersion": "1.0.6",
     "copyright": "版权所有 © 2026 山东飞力达软件有限公司"
   },
   "wailsjsdir": "./frontend/wailsjs",

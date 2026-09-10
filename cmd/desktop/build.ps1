@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 # 飞力达云桌面 - 完整构建打包脚本（带版本号自增）
 # ============================================================
 # 用法:
@@ -27,13 +27,35 @@ $ErrorActionPreference = "Stop"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $ScriptDir
 
-# ====== 路径 / 环境配置 ======
-$Env:Path = "D:\kaifahuanjing\node;D:\kaifahuanjing\go\bin;D:\kaifahuanjing\NSIS\Bin;D:\kaifahuanjing\NSIS;" + $Env:Path
-
-$GoExe      = "D:\kaifahuanjing\go\bin\go.exe"
-$NodeExe    = "D:\kaifahuanjing\node\node.exe"
-$WailsExe   = "D:\kaifahuanjing\go\bin\wails.exe"
-$NSIS_EXE   = "D:\kaifahuanjing\NSIS\Bin\makensis.exe"
+# ====== 路径 / 环境配置（优先使用 PATH 中的工具，回退到 D:\kaifahuanjing） ======
+function Find-Tool($name) {
+    $cmd = Get-Command $name -ErrorAction SilentlyContinue
+    if ($cmd -and $cmd.Source) { return $cmd.Source }
+    if ($name -eq 'go') {
+        foreach ($p in @("D:\kaifahuanjing\go\bin\go.exe", "C:\Program Files\Go\bin\go.exe")) { if (Test-Path $p) { return $p } }
+    }
+    if ($name -eq 'node') {
+        foreach ($p in @("D:\kaifahuanjing\node\node.exe", "C:\Program Files\nodejs\node.exe")) { if (Test-Path $p) { return $p } }
+    }
+    if ($name -eq 'wails') {
+        foreach ($p in @("D:\kaifahuanjing\go\bin\wails.exe", "$env:USERPROFILE\go\bin\wails.exe")) { if (Test-Path $p) { return $p } }
+    }
+    if ($name -eq 'makensis') {
+        foreach ($p in @("D:\kaifahuanjing\NSIS\Bin\makensis.exe", "C:\Program Files (x86)\NSIS\Bin\makensis.exe", "C:\Program Files\NSIS\Bin\makensis.exe")) { if (Test-Path $p) { return $p } }
+    }
+    throw "$name not found in PATH or common install locations"
+}
+$GoExe    = Find-Tool 'go'
+$NodeExe  = Find-Tool 'node'
+$WailsExe = Find-Tool 'wails'
+$NSIS_EXE = Find-Tool 'makensis'
+# 把 Go/Node/NSIS 加入 PATH（wails build 内部会调用 go 和 node）
+$toolDir = Split-Path $GoExe -Parent
+if ($Env:Path -notlike "*$toolDir*") { $Env:Path = "$toolDir;$Env:Path" }
+$nodeDir = Split-Path $NodeExe -Parent
+if ($Env:Path -notlike "*$nodeDir*") { $Env:Path = "$nodeDir;$Env:Path" }
+$nsisDir = Split-Path (Split-Path $NSIS_EXE -Parent) -Parent
+if ($Env:Path -notlike "*$nsisDir*") { $Env:Path = "$nsisDir;$Env:Path" }
 
 $ProjectRoot  = Split-Path (Split-Path $ScriptDir -Parent) -Parent
 $VersionFile  = Join-Path $ScriptDir "VERSION"
@@ -103,15 +125,27 @@ Check-Exists $WailsJson "wails.json"
 Check-Exists $InstallerNsi "installer.nsi"
 
 $HorizonInstaller = Get-ChildItem -LiteralPath $ProjectRoot -Filter "Omnissa-Horizon8-Client*.exe" | Select-Object -First 1
-if (-not $HorizonInstaller) { throw ("未在项目根目录找到 Omnissa Horizon 8 安装包: " + $ProjectRoot) }
-Write-OK ("Omnissa Horizon 8 安装包: " + $HorizonInstaller.Name)
+if (-not $HorizonInstaller) {
+    # 回退：使用 prerequisites 中已有的副本（无需重新获取根目录安装包）
+    $fallbackHorizon = Join-Path $ScriptDir "prerequisites\Omnissa-Horizon8-Client.exe"
+    if (Test-Path $fallbackHorizon) {
+        Write-Info "根目录未找到 Horizon 安装包, 使用 prerequisites 中的副本"
+        $HorizonInstaller = Get-Item $fallbackHorizon
+    }
+}
+if (-not $HorizonInstaller) { throw ("未找到 Omnissa Horizon 8 安装包 (根目录或 prerequisites): " + $ProjectRoot) }
+Write-OK ("Omnissa Horizon 8 安装包: " + $HorizonInstaller.FullName)
 
 $SafeHorizon = ".\prerequisites\Omnissa-Horizon8-Client.exe"
 if (-not (Test-Path (Join-Path $ScriptDir "prerequisites"))) {
     New-Item -ItemType Directory -Path (Join-Path $ScriptDir "prerequisites") -Force | Out-Null
 }
-Copy-Item -LiteralPath $HorizonInstaller.FullName -Destination $SafeHorizon -Force
-Write-OK "已复制 Horizon 安装包到 prerequisites"
+if ($HorizonInstaller.FullName -ne (Join-Path $ScriptDir "prerequisites\Omnissa-Horizon8-Client.exe")) {
+    Copy-Item -LiteralPath $HorizonInstaller.FullName -Destination $SafeHorizon -Force
+    Write-OK "已复制 Horizon 安装包到 prerequisites"
+} else {
+    Write-OK "Horizon 安装包已在 prerequisites"
+}
 
 # ====== [2/6] 版本号管理 ======
 Write-Step 2 6 "版本号管理..."

@@ -7,7 +7,7 @@
 !define APP_NAME        "飞力达云桌面"
 !define APP_EXE         "vdihub.exe"
 !define APP_PUBLISHER   "山东飞力达软件有限公司"
-!define APP_VERSION     "1.0.5"
+!define APP_VERSION     "1.0.6"
 !define APP_URL         "https://sdfeilida.com"
 !define UNINSTALL_EXE   "uninst.exe"
 
