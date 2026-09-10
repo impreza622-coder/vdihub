@@ -5,7 +5,7 @@
 !include "FileFunc.nsh"
 
 !ifndef INFO_PROJECTNAME
-    !define INFO_PROJECTNAME "thin-client-desktop"
+    !define INFO_PROJECTNAME "vdihub"
 !endif
 !ifndef INFO_COMPANYNAME
     !define INFO_COMPANYNAME "山东飞力达软件有限公司"

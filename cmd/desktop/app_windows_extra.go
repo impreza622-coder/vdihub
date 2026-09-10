@@ -157,7 +157,7 @@ func activateExistingInstance() {
 		if par != 0 {
 			return 1
 		}
-		// 标题含"云桌面"或窗口类名属于 thin-client-desktop（Wails 通常是 "WebView2Host"/"Chrome_WidgetWin_1"，因此改用窗口标题判断）
+		// 标题含"云桌面"或窗口类名属于 vdihub（Wails 通常是 "WebView2Host"/"Chrome_WidgetWin_1"，因此改用窗口标题判断）
 		title := getWindowText(hwnd)
 		if contains(title, "云桌面") || contains(title, "瘦客户") || contains(title, "Thin Client") || contains(title, "FeiLiDa") {
 			c.bestHWND = hwnd
@@ -1095,7 +1095,7 @@ func readSystemKioskStatus() *SystemKioskStatus {
 		exeLower := strings.ToLower(strings.TrimSpace(st.OurExePath))
 		shellLower := strings.ToLower(strings.TrimSpace(shell))
 		st.ShellReplaced = (exeLower != "" && shellLower != "" && (strings.EqualFold(shellLower, exeLower) ||
-			strings.Contains(shellLower, "thin-client-desktop") || strings.Contains(shellLower, "cloud-desktop"))) ||
+			strings.Contains(shellLower, "thin-client-desktop") || strings.Contains(shellLower, "vdihub") || strings.Contains(shellLower, "cloud-desktop"))) ||
 			(shellLower != "explorer.exe")
 	}
 	// 自动登录
@@ -1167,7 +1167,7 @@ func writeUninstallEntry(publisher, version, displayName string) error {
 	exe := getExecutablePath()
 	icon := exe
 	if exe == "" {
-		exe = "thin-client-desktop.exe"
+		exe = "vdihub.exe"
 	}
 	if displayName == "" {
 		displayName = "云桌面客户端"

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"shoukehuduan/internal/auth"
-	"shoukehuduan/internal/pve"
-	"shoukehuduan/internal/session"
-	"shoukehuduan/pkg/types"
+	"vdihub/internal/auth"
+	"vdihub/internal/pve"
+	"vdihub/internal/session"
+	"vdihub/pkg/types"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

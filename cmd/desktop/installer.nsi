@@ -1,11 +1,11 @@
 ﻿; ============================================================
-;   飞力达云桌面 (Thin Client Desktop)   NSIS 安装脚本
+;   VDIHub 飞力达云桌面   NSIS 安装脚本
 ;   编码：UTF-8 with BOM（build.ps1 按 UTF8-BOM 读写，NSIS Unicode true）
 ; ============================================================
 
 ; ------ 应用信息 ------
 !define APP_NAME        "飞力达云桌面"
-!define APP_EXE         "thin-client-desktop.exe"
+!define APP_EXE         "vdihub.exe"
 !define APP_PUBLISHER   "山东飞力达软件有限公司"
 !define APP_VERSION     "1.0.5"
 !define APP_URL         "https://sdfeilida.com"

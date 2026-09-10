@@ -10,7 +10,9 @@ import (
 )
 
 // ============================================================
-//  Win32 常量（窗口消息、Shell_NotifyIcon 标志、菜单标志）
+//
+//	Win32 常量（窗口消息、Shell_NotifyIcon 标志、菜单标志）
+//
 // ============================================================
 const (
 	wmUser          = 0x0400
@@ -21,8 +23,8 @@ const (
 	wmDestroy       = 0x0002
 	wmClose         = 0x0010
 
-	nimAdd    = 0x00000000
-	nimDelete = 0x00000002
+	nimAdd     = 0x00000000
+	nimDelete  = 0x00000002
 	nifMessage = 0x00000001
 	nifIcon    = 0x00000002
 	nifTip     = 0x00000004
@@ -99,36 +101,38 @@ type notifyIconData struct {
 }
 
 // ============================================================
-//  Lazy DLL 加载（user32.dll / shell32.dll）
-//  golang.org/x/sys/windows 不导出窗口管理 API，所以自己声明。
+//
+//	Lazy DLL 加载（user32.dll / shell32.dll）
+//	golang.org/x/sys/windows 不导出窗口管理 API，所以自己声明。
+//
 // ============================================================
 var (
 	user32   = windows.NewLazySystemDLL("user32.dll")
 	shell32  = windows.NewLazySystemDLL("shell32.dll")
 	kernel32 = windows.NewLazySystemDLL("kernel32.dll")
 
-	procRegisterClassEx  = user32.NewProc("RegisterClassExW")
-	procCreateWindowEx   = user32.NewProc("CreateWindowExW")
-	procDefWindowProc    = user32.NewProc("DefWindowProcW")
-	procGetMessage       = user32.NewProc("GetMessageW")
-	procTranslateMessage = user32.NewProc("TranslateMessage")
-	procDispatchMessage  = user32.NewProc("DispatchMessageW")
-	procPostQuitMessage  = user32.NewProc("PostQuitMessage")
-	procPostMessage      = user32.NewProc("PostMessageW")
-	procSendMessage      = user32.NewProc("SendMessageW")
-	procDestroyWindow    = user32.NewProc("DestroyWindow")
-	procCreatePopupMenu  = user32.NewProc("CreatePopupMenu")
-	procAppendMenu       = user32.NewProc("AppendMenuW")
-	procTrackPopupMenu   = user32.NewProc("TrackPopupMenu")
-	procDestroyMenu      = user32.NewProc("DestroyMenu")
-	procGetCursorPos     = user32.NewProc("GetCursorPos")
-	procSetForegroundWnd = user32.NewProc("SetForegroundWindow")
-	procLoadIcon         = user32.NewProc("LoadIconW")
-	procLoadCursor       = user32.NewProc("LoadCursorW")
+	procRegisterClassEx   = user32.NewProc("RegisterClassExW")
+	procCreateWindowEx    = user32.NewProc("CreateWindowExW")
+	procDefWindowProc     = user32.NewProc("DefWindowProcW")
+	procGetMessage        = user32.NewProc("GetMessageW")
+	procTranslateMessage  = user32.NewProc("TranslateMessage")
+	procDispatchMessage   = user32.NewProc("DispatchMessageW")
+	procPostQuitMessage   = user32.NewProc("PostQuitMessage")
+	procPostMessage       = user32.NewProc("PostMessageW")
+	procSendMessage       = user32.NewProc("SendMessageW")
+	procDestroyWindow     = user32.NewProc("DestroyWindow")
+	procCreatePopupMenu   = user32.NewProc("CreatePopupMenu")
+	procAppendMenu        = user32.NewProc("AppendMenuW")
+	procTrackPopupMenu    = user32.NewProc("TrackPopupMenu")
+	procDestroyMenu       = user32.NewProc("DestroyMenu")
+	procGetCursorPos      = user32.NewProc("GetCursorPos")
+	procSetForegroundWnd  = user32.NewProc("SetForegroundWindow")
+	procLoadIcon          = user32.NewProc("LoadIconW")
+	procLoadCursor        = user32.NewProc("LoadCursorW")
 	procCreateIconFromRes = user32.NewProc("CreateIconFromResource")
 
-	procShellNotifyIcon  = shell32.NewProc("Shell_NotifyIconW")
-	procGetModuleHandle  = kernel32.NewProc("GetModuleHandleW")
+	procShellNotifyIcon = shell32.NewProc("Shell_NotifyIconW")
+	procGetModuleHandle = kernel32.NewProc("GetModuleHandleW")
 )
 
 // ============================================================
@@ -342,15 +346,15 @@ func (m *Manager) startPlatform() {
 
 		// 2. 创建消息专用隐藏窗口（hWndParent = HWND_MESSAGE）
 		hwnd, _, _ := procCreateWindowEx.Call(
-			0,                          // dwExStyle
+			0,                                  // dwExStyle
 			uintptr(unsafe.Pointer(className)), // lpClassName
-			0,                          // lpWindowName
-			0,                          // dwStyle（不显示）
-			0, 0, 0, 0,                // x, y, width, height
-			hwndMessage,                // hWndParent = HWND_MESSAGE
-			0,                          // hMenu
-			uintptr(hInst),             // hInstance
-			0,                          // lpParam
+			0,                                  // lpWindowName
+			0,                                  // dwStyle（不显示）
+			0, 0, 0, 0,                         // x, y, width, height
+			hwndMessage,    // hWndParent = HWND_MESSAGE
+			0,              // hMenu
+			uintptr(hInst), // hInstance
+			0,              // lpParam
 		)
 		if hwnd == 0 {
 			return

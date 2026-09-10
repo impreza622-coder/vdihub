@@ -104,8 +104,8 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-org/shoukehuduan.git
-cd shoukehuduan
+git clone https://github.com/your-org/vdihub.git
+cd vdihub
 
 # 安装 Go 依赖
 go mod download
@@ -158,7 +158,7 @@ powershell -ExecutionPolicy Bypass -File .\build.ps1
 ## 📁 项目结构
 
 ```
-shoukehuduan/
+vdihub/
 ├── cmd/
 │   ├── server/            # 后端服务入口
 │   └── desktop/           # Wails 桌面客户端

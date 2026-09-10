@@ -59,7 +59,7 @@ $SafeHorizon = ".\prerequisites\Omnissa-Horizon8-Client.exe"
 Copy-Item -LiteralPath $HorizonInstaller.FullName -Destination $SafeHorizon -Force
 Write-Host ("  [ OK ] Copied Horizon installer to: " + $SafeHorizon) -ForegroundColor DarkCyan
 
-$ExePath = ".\build\bin\thin-client-desktop.exe"
+$ExePath = ".\build\bin\vdihub.exe"
 if (-not $SkipWailsBuild) {
     Write-Host "[2/4] Wails build (wails build -clean) ..." -ForegroundColor Yellow
     $sw = [System.Diagnostics.Stopwatch]::StartNew()
@@ -88,7 +88,7 @@ Write-Host ""
 Write-Host "[3/4] Verify main EXE ..." -ForegroundColor Yellow
 if (-not (Test-Path $ExePath)) { throw ("Main EXE missing: " + $ExePath) }
 $exeItem = Get-Item $ExePath
-Write-Host ("  [ OK ] thin-client-desktop.exe: " + [math]::Round($exeItem.Length/1MB,1) + " MB, " + $exeItem.LastWriteTime) -ForegroundColor Green
+Write-Host ("  [ OK ] vdihub.exe: " + [math]::Round($exeItem.Length/1MB,1) + " MB, " + $exeItem.LastWriteTime) -ForegroundColor Green
 Write-Host ""
 
 $InstallerPath = ".\installer.exe"

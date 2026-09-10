@@ -5,8 +5,8 @@ package main
 //
 // 用法（从项目根）：
 //   go run ./tools/genico \
-//       -src d:\AIxiangmu\shoukehuduan\cmd\desktop\build\appicon.png \
-//       -out d:\AIxiangmu\shoukehuduan\cmd\desktop\build\windows\icon.ico
+//       -src d:\AIxiangmu\vdihub\cmd\desktop\build\appicon.png \
+//       -out d:\AIxiangmu\vdihub\cmd\desktop\build\windows\icon.ico
 
 import (
 	"bytes"

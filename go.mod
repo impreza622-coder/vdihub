@@ -1,4 +1,4 @@
-module shoukehuduan
+module vdihub
 
 go 1.25.0
 

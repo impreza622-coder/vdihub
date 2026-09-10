@@ -3,8 +3,8 @@ package auth
 import (
 	"time"
 
-	"shoukehuduan/internal/config"
-	"shoukehuduan/pkg/types"
+	"vdihub/internal/config"
+	"vdihub/pkg/types"
 
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"

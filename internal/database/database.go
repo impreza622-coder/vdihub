@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"shoukehuduan/internal/config"
-	"shoukehuduan/pkg/types"
+	"vdihub/internal/config"
+	"vdihub/pkg/types"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

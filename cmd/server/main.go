@@ -5,13 +5,13 @@ import (
 	"log"
 	"os"
 
-	"shoukehuduan/internal/auth"
-	"shoukehuduan/internal/config"
-	"shoukehuduan/internal/database"
-	"shoukehuduan/internal/handlers"
-	"shoukehuduan/internal/pve"
-	"shoukehuduan/internal/routes"
-	"shoukehuduan/internal/session"
+	"vdihub/internal/auth"
+	"vdihub/internal/config"
+	"vdihub/internal/database"
+	"vdihub/internal/handlers"
+	"vdihub/internal/pve"
+	"vdihub/internal/routes"
+	"vdihub/internal/session"
 
 	"github.com/redis/go-redis/v9"
 )

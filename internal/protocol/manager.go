@@ -129,7 +129,7 @@ type ProtocolManager struct {
 }
 
 func NewProtocolManager() *ProtocolManager {
-	tempDir := filepath.Join(os.TempDir(), "thin-client-desktop")
+	tempDir := filepath.Join(os.TempDir(), "vdihub")
 	os.MkdirAll(tempDir, 0755)
 	return &ProtocolManager{tempDir: tempDir}
 }
@@ -257,7 +257,7 @@ func (m *ProtocolManager) launchWindowsHorizon(config *ConnectionConfig) error {
 			NotAfter   time.Time `json:"not_after"`
 		}
 		prepFile := filepath.Join(os.TempDir(),
-			fmt.Sprintf("shoukehuduan_horizon_prep_%s_%d.json", sanitizeHost(effectiveHost), effectivePort))
+			fmt.Sprintf("vdihub_horizon_prep_%s_%d.json", sanitizeHost(effectiveHost), effectivePort))
 		prepOK := false
 		certImported := false
 		if data, errR := os.ReadFile(prepFile); errR == nil && len(data) > 0 {
@@ -938,8 +938,8 @@ func (m *ProtocolManager) launchWindowsRDP(config *ConnectionConfig) error {
 	runOnce := func(exePath string, a []string, blockAltF4Pid int) (int, string, string, error) {
 		logDir := os.TempDir()
 		ts := time.Now().Format("20060102_150405")
-		logFile := filepath.Join(logDir, fmt.Sprintf("shoukehuduan_freerdp_%s_%s.log", sanitizeHost(config.Host), ts))
-		cmdFile := filepath.Join(logDir, fmt.Sprintf("shoukehuduan_freerdp_last_cmd_%s.txt", sanitizeHost(config.Host)))
+		logFile := filepath.Join(logDir, fmt.Sprintf("vdihub_freerdp_%s_%s.log", sanitizeHost(config.Host), ts))
+		cmdFile := filepath.Join(logDir, fmt.Sprintf("vdihub_freerdp_last_cmd_%s.txt", sanitizeHost(config.Host)))
 
 		cmd := exec.Command(exePath, a...)
 		exeDir := filepath.Dir(exePath)
@@ -1328,7 +1328,7 @@ func (m *ProtocolManager) launchWindowsRDP(config *ConnectionConfig) error {
 		IsBare     bool   `json:"is_bare"`
 	}
 	cacheFile := filepath.Join(os.TempDir(),
-		fmt.Sprintf("shoukehuduan_rdp_success_%s.json", sanitizeHost(config.Host)))
+		fmt.Sprintf("vdihub_rdp_success_%s.json", sanitizeHost(config.Host)))
 	// ---------- 写成功缓存（成功命中即持久化，下次优先使用） ----------
 	// 注意：必须声明在 tryCached 之前（tryCached 内部要调用它做客户端升级）
 	writeCache := func(k successKey) {

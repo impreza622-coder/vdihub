@@ -13,7 +13,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 
-	"shoukehuduan/internal/tray"
+	"vdihub/internal/tray"
 )
 
 //go:embed all:frontend/dist
@@ -97,9 +97,9 @@ func main() {
 	protocolService := NewProtocolService(app)
 
 	err := wails.Run(&options.App{
-		Title:  "瘦客户端云桌面系统",
-		Width:  1100,
-		Height: 790,
+		Title:     "瘦客户端云桌面系统",
+		Width:     1100,
+		Height:    790,
 		MinWidth:  1100,
 		MinHeight: 790,
 		// 普通模式：点击关闭按钮 → 隐藏窗口到托盘（不退出进程）

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"time"
 
-	"shoukehuduan/pkg/types"
+	"vdihub/pkg/types"
 
 	"github.com/redis/go-redis/v9"
 )

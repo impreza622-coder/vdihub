@@ -243,7 +243,7 @@ func ensureHostsEntry(ip, hostname string) (bool, error) {
 	// 确保末尾有换行
 	newText = strings.TrimRight(newText, "\r\n") + "\r\n"
 	// 添加新条目
-	newText += fmt.Sprintf("# Horizon Broker CN auto-mapping (by shoukehuduan)\r\n%s %s\r\n", ip, hostname)
+	newText += fmt.Sprintf("# Horizon Broker CN auto-mapping (by vdihub)\r\n%s %s\r\n", ip, hostname)
 
 	if err := os.WriteFile(hostsPath, []byte(newText), 0644); err != nil {
 		return false, fmt.Errorf("write hosts: %w (may need admin privileges)", err)
@@ -732,7 +732,7 @@ func startEdgeMouseBlocker(durationSec int) {
 		)
 		if hHook == 0 {
 			// 钩子安装失败，写日志
-			logFile := filepath.Join(os.TempDir(), "shoukehuduan_edge_hook.log")
+			logFile := filepath.Join(os.TempDir(), "vdihub_edge_hook.log")
 			_ = os.WriteFile(logFile, []byte(fmt.Sprintf(
 				"[%s] SetWindowsHookEx FAILED: hHook=0 hMod=%v tid=%d screenW=%d screenH=%d\n",
 				time.Now().Format("15:04:05"), hMod, tid, edgeScreenW, edgeScreenH)), 0644)
@@ -741,7 +741,7 @@ func startEdgeMouseBlocker(durationSec int) {
 		edgeMouseHook = hHook
 
 		// 钩子安装成功，写日志
-		logFile := filepath.Join(os.TempDir(), "shoukehuduan_edge_hook.log")
+		logFile := filepath.Join(os.TempDir(), "vdihub_edge_hook.log")
 		_ = os.WriteFile(logFile, []byte(fmt.Sprintf(
 			"[%s] SetWindowsHookEx OK: hHook=%v tid=%d screenW=%d screenH=%d edgeThreshold=4px\n",
 			time.Now().Format("15:04:05"), hHook, tid, edgeScreenW, edgeScreenH)), 0644)
@@ -1033,7 +1033,7 @@ func installCertToRoot(der []byte, label string) error {
 		return nil
 	}
 	// write temp .cer
-	tmp := filepath.Join(os.TempDir(), fmt.Sprintf("shoukehuduan_horizon_cert_%s.cer", label))
+	tmp := filepath.Join(os.TempDir(), fmt.Sprintf("vdihub_horizon_cert_%s.cer", label))
 	if err := os.WriteFile(tmp, der, 0644); err != nil {
 		return err
 	}

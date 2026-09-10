@@ -1,9 +1,9 @@
 package routes
 
 import (
-	"shoukehuduan/internal/auth"
-	"shoukehuduan/internal/handlers"
-	"shoukehuduan/internal/middleware"
+	"vdihub/internal/auth"
+	"vdihub/internal/handlers"
+	"vdihub/internal/middleware"
 
 	"github.com/gin-gonic/gin"
 )

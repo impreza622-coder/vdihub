@@ -24,8 +24,8 @@ import (
 
 	"github.com/wailsapp/wails/v2/pkg/runtime"
 
-	"shoukehuduan/internal/protocol"
-	"shoukehuduan/internal/tray"
+	"vdihub/internal/protocol"
+	"vdihub/internal/tray"
 )
 
 var errWindowNotReady = errors.New("窗口未就绪")

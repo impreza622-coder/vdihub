@@ -4,8 +4,8 @@ import (
 	"net/http"
 	"strings"
 
-	"shoukehuduan/internal/auth"
-	"shoukehuduan/pkg/types"
+	"vdihub/internal/auth"
+	"vdihub/pkg/types"
 
 	"github.com/gin-gonic/gin"
 )

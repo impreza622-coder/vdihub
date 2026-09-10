@@ -39,7 +39,7 @@ $ProjectRoot  = Split-Path (Split-Path $ScriptDir -Parent) -Parent
 $VersionFile  = Join-Path $ScriptDir "VERSION"
 $WailsJson    = Join-Path $ScriptDir "wails.json"
 $InstallerNsi = Join-Path $ScriptDir "installer.nsi"
-$ExePath      = Join-Path $ScriptDir "build\bin\thin-client-desktop.exe"
+$ExePath      = Join-Path $ScriptDir "build\bin\vdihub.exe"
 $InstallerRaw = Join-Path $ScriptDir "installer.exe"
 $DistDir      = Join-Path $ProjectRoot "installer_out"
 
@@ -221,7 +221,7 @@ $pkgItem = Get-Item $PkgPath
 Write-OK ("安装包: " + $pkgItem.FullName)
 Write-OK ("大小  : " + [math]::Round($pkgItem.Length/1MB,1) + " MB")
 
-$ExePkgName = "thin-client-desktop_" + $newP.Display + ".exe"
+$ExePkgName = "vdihub_" + $newP.Display + ".exe"
 $ExePkgPath = Join-Path $DistDir $ExePkgName
 Copy-Item -Path $ExePath -Destination $ExePkgPath -Force
 Write-OK ("主程序: " + $ExePkgPath)

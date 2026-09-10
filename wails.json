@@ -1,7 +1,7 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "github.com/example/thin-client-desktop",
-  "outputfilename": "thin-client-desktop",
+  "name": "vdihub",
+  "outputfilename": "vdihub",
   "frontend:install": "npm --prefix ./cmd/desktop/frontend install",
   "frontend:build": "npm --prefix ./cmd/desktop/frontend run build",
   "frontend:dev:watcher": "npm --prefix ./cmd/desktop/frontend run dev",

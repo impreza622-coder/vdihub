@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"shoukehuduan/internal/config"
-	"shoukehuduan/pkg/types"
+	"vdihub/internal/config"
+	"vdihub/pkg/types"
 )
 
 type Client struct {
