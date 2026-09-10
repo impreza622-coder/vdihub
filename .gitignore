@@ -10,6 +10,9 @@ installer_out/
 build_log*.txt
 *.log
 
+# 运行时迁移标记（kiosk 模式自动生成）
+.kiosk_migrate_v1
+
 # 前端
 node_modules/
 cmd/desktop/frontend/dist/

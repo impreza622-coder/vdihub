@@ -7,14 +7,14 @@
   "frontend:dev:watcher": "npm run dev",
   "frontend:dev:serverUrl": "auto",
   "author": {
-    "name": "山东飞力达软件有限公司",
-    "email": "contact@sdfeilida.com"
+    "name": "Thin Client Team",
+    "email": "thinclient@example.com"
   },
   "info": {
-    "companyName": "山东飞力达软件有限公司",
-    "productName": "飞力达云桌面",
+    "companyName": "Thin Client",
+    "productName": "瘦客户端云桌面",
     "productVersion": "1.0.5",
-    "copyright": "版权所有 © 2026 山东飞力达软件有限公司"
+    "copyright": "Copyright © 2026 Thin Client Team"
   },
   "wailsjsdir": "./frontend/wailsjs",
   "assetdir": "./frontend/dist"

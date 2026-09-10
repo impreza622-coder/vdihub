@@ -1,5 +1,5 @@
-﻿# ============================================================
-# 飞力达云桌面 - 完整构建打包脚本（带版本号自增）
+# ============================================================
+# 瘦客户端云桌面 - 完整构建打包脚本（带版本号自增）
 # ============================================================
 # 用法:
 #   powershell -ExecutionPolicy Bypass -File .\build.ps1              # 默认: 自增版本号 + 完整构建
@@ -89,7 +89,7 @@ function Write-File($p, $content, $useBom) {
 # ============================================================
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Cyan
-Write-Host "  飞力达云桌面 - 完整构建打包脚本" -ForegroundColor Cyan
+Write-Host "  瘦客户端云桌面 - 完整构建打包脚本" -ForegroundColor Cyan
 Write-Host ("  Working Dir: " + $ScriptDir) -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 
@@ -214,7 +214,7 @@ if (-not $SkipNsis) {
 Write-Step 5 6 "输出带版本号的产物..."
 if (-not (Test-Path $DistDir)) { New-Item -ItemType Directory -Path $DistDir -Force | Out-Null }
 
-$PkgName = "飞力达云桌面_" + $newP.Display + "_Setup.exe"
+$PkgName = "瘦客户端云桌面_" + $newP.Display + "_Setup.exe"
 $PkgPath = Join-Path $DistDir $PkgName
 Copy-Item -Path $InstallerRaw -Destination $PkgPath -Force
 $pkgItem = Get-Item $PkgPath

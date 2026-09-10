@@ -607,7 +607,7 @@ func (a *App) ShutdownMachine() error {
 		time.Sleep(1 * time.Second)
 		// shutdown /s /t 5 /c "云桌面客户端正在关闭计算机"
 		// /s = 关机, /t 5 = 5秒后执行, /c = 提示信息
-		cmd := exec.Command("shutdown", "/s", "/t", "5", "/c", "飞力达云桌面客户端正在关闭计算机...")
+		cmd := exec.Command("shutdown", "/s", "/t", "5", "/c", "云桌面客户端正在关闭计算机...")
 		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true, CreationFlags: 0x08000000}
 		_ = cmd.Start()
 		// 4. 退出本程序
@@ -627,7 +627,7 @@ func (a *App) RestartMachine() error {
 		time.Sleep(1 * time.Second)
 		// shutdown /r /t 5 /c "云桌面客户端正在重启计算机"
 		// /r = 重启, /t 5 = 5秒后执行, /c = 提示信息
-		cmd := exec.Command("shutdown", "/r", "/t", "5", "/c", "飞力达云桌面客户端正在重启计算机...")
+		cmd := exec.Command("shutdown", "/r", "/t", "5", "/c", "云桌面客户端正在重启计算机...")
 		cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true, CreationFlags: 0x08000000}
 		_ = cmd.Start()
 		// 4. 退出本程序
@@ -1423,8 +1423,8 @@ type PveVMInfo struct {
 	VMID   int    `json:"vmid"`
 	Name   string `json:"name"`
 	Node   string `json:"node"`
-	Status string `json:"status"`   // running / stopped / suspended
-	Type   string `json:"type"`     // qemu / lxc
+	Status string `json:"status"` // running / stopped / suspended
+	Type   string `json:"type"`   // qemu / lxc
 	Tags   string `json:"tags,omitempty"`
 }
 
